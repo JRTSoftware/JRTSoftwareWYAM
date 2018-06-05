@@ -1,0 +1,24 @@
+// Customize your settings and add new ones here
+Settings[Keys.Host] = "www.jrtsoftware.co.uk";
+Settings[Keys.LinksUseHttps] = true;
+Settings[BlogKeys.Title] = "JRT SOFTWARE";
+Settings[BlogKeys.Image] = "/img/JRT-Logo.svg";
+Settings[BlogKeys.Description] = "JRT SOFTWARE, helping with all of your development needs";
+Settings[BlogKeys.Intro] = "JRT SOFTWARE have a wealth and breadth of knowledge that can make a serious impact, we can be bought into a company and really make a difference. We can help you to analyse your business processes and suggest tools or develop bespoke tools that could save you a fortune. Personally we never like to do exactly the same task more than twice. Based in Southampton on the South Coast we have great transport links to get anywhere in the UK although we are just as effective working remotely as we are working onsite.";
+
+// Add any pipeline customizations here
+#r blog
+#t SolidState
+#n Wyam.Markdown
+#n Wyam.Images
+
+
+Pipelines.Add("Images",
+  ReadFiles("*")
+    .Where(x => new[] { ".jpg", ".jpeg", ".gif", ".png"}.Contains(x.Path.Extension)),
+  Image()
+    .SetJpegQuality(100).Resize(400,209).SetSuffix("-thumb")
+    .And
+    .SetJpegQuality(70).Resize(400*2, 209*2).SetSuffix("-medium"),
+  WriteFiles("*")
+);

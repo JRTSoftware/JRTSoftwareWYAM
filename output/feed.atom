@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<link rel="self" href="https://www.jrtsoftware.co.uk/" />
+	<id>https://www.jrtsoftware.co.uk/</id>
+	<title>JRT SOFTWARE</title>
+	<rights>2018</rights>
+	<updated>2018-05-10T12:03:48Z</updated>
+	<logo>https://www.jrtsoftware.co.uk/img/JRT-Logo.svg</logo>
+	<subtitle>JRT SOFTWARE, helping with all of your development needs</subtitle>
+</feed>
